@@ -1,12 +1,14 @@
-
-
+import { BrowserRouter, Route,Routes } from "react-router-dom";
+import Landing from "./pages/Landing/Landing";
+import Register from "./pages/authentication/Register";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
