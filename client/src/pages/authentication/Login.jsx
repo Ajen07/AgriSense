@@ -3,7 +3,7 @@ import heroImage from "../../assets/heroImage3.jpg";
 
 const Login = () => {
   return (
-    <section className="flex flex-col md:flex-row">
+    <section className="flex flex-col md:flex-row-reverse">
       <article className="bg-black h-[100vh] relative overflow-hidden w-[50vw]">
         <img
           className="w-full h-full object-fill"
