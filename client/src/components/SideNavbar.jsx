@@ -6,11 +6,11 @@ import settingsLogo from "../assets/settings.png";
 import analyticsLogo from "../assets/analytics.png";
 const SideNavbar = () => {
   return (
-    <section className="bg-[#c1ffa7] md:flex md:w-[200px] md:justify-center hidden">
+    <section className="bg-[#c1ffa7] md:flex md:w-[200px] md:justify-center ">
       <nav className="mt-8">
         <ul className="flex flex-col gap-y-6">
           <Navitem
-            to="/"
+            to="/dashboard"
             image={overviewLogo}
             altText="Review"
             name="Review"
@@ -22,7 +22,7 @@ const SideNavbar = () => {
             name="Sensors"
           />
           <Navitem
-            to="settingsLogo"
+            to="settings"
             image={settingsLogo}
             altText="settings"
             name="Settings"
