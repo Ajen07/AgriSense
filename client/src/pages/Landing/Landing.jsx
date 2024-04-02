@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../public/assets/logo.png";
+import logo from "/assets/logo.png";
 /* import heroImage from "../../../public/assets/heroImage.jpg"; */
 import { Link } from "react-router-dom";
 import { useFirebase } from "../../context/Firebase";
