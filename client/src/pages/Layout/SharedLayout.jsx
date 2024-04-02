@@ -1,8 +1,8 @@
 import React from "react";
 import SideNavbar from "../../components/SideNavbar";
 import { Outlet } from "react-router-dom";
-import logo from "../../assets/logo.png";
-import profileLogo from "../../assets/profileLogo.png";
+import logo from "../../../public/assets/logo.png";
+import profileLogo from "../../../public/assets/profileLogo.png";
 
 const SharedLayout = () => {
   return (

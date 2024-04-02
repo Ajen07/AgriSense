@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import OverviewItem from "../../components/OverviewItem";
-import fertilizerLogo from "../../assets/fertilityLogo.png";
-import humidityLogo from "../../assets/humidityLogo.png";
-import moistureLogo from "../../assets/moistureLogo.png";
-import tempLogo from "../../assets/tempLogo.png";
+import fertilizerLogo from "/assets/fertilityLogo.png";
+import humidityLogo from "/assets/humidityLogo.png";
+import moistureLogo from "/assets/moistureLogo.png";
+import tempLogo from "/assets/tempLogo.png";
 import { useFirebase } from "../../context/Firebase";
 
 const Overview = () => {

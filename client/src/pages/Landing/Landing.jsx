@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../../assets/logo.png";
-import heroImage from "../../assets/heroImage.png";
+import logo from "../../../public/assets/logo.png";
+/* import heroImage from "../../../public/assets/heroImage.jpg"; */
 import { Link } from "react-router-dom";
 import { useFirebase } from "../../context/Firebase";
 const Landing = () => {

@@ -1,9 +1,9 @@
 import React from "react";
 import Navitem from "./Navitem";
-import overviewLogo from "../assets/overview.png";
-import sensorsLogo from "../assets/sensors.png";
-import settingsLogo from "../assets/settings.png";
-import analyticsLogo from "../assets/analytics.png";
+import overviewLogo from "/assets/overview.png";
+import sensorsLogo from "/assets/sensors.png";
+import settingsLogo from "/assets/settings.png";
+import analyticsLogo from "/assets/analytics.png";
 const SideNavbar = () => {
   return (
     <section className="bg-[#c1ffa7] md:flex md:w-[200px] md:justify-center ">
