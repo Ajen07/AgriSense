@@ -5,26 +5,31 @@ import Login from "./pages/authentication/Login";
 import SharedLayout from "./pages/Layout/SharedLayout";
 import Overview from "./pages/dashboard/Overview";
 import ProtectedLayout from "./pages/Layout/ProtectedLayout";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedLayout>
-              <SharedLayout />
-            </ProtectedLayout>
-          }
-        >
-          <Route index element={<Overview />} />
-        </Route>
-        <Route path="*" element={<h1>Not Found</h1>} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <ToastContainer />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedLayout>
+                <SharedLayout />
+              </ProtectedLayout>
+            }
+          >
+            <Route index element={<Overview />} />
+          </Route>
+          <Route path="*" element={<h1>Not Found</h1>} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

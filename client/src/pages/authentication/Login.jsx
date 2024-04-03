@@ -1,7 +1,41 @@
 import React from "react";
-import heroImage from "../../../public/assets/heroImage3.jpg";
+import heroImage from "/assets/heroImage3.jpg";
+import { useNavigate } from "react-router-dom";
+import { useFirebase } from "../../context/Firebase";
 
 const Login = () => {
+  const { login } = useFirebase();
+  const navigate = useNavigate();
+  const [initialValues, setInitialValues] = useState({
+    email: "",
+    password: "",
+  });
+  const { email, password } = initialValues;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const resp = await login({ ...initialValues });
+      console.log(resp);
+      toast.success("Login Successfull", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+      });
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setInitialValues({ ...initialValues, [name]: value });
+  };
   return (
     <section className="flex flex-col md:flex-row-reverse">
       <article className="bg-black h-[100vh] relative overflow-hidden w-[50vw]">
@@ -22,6 +56,8 @@ const Login = () => {
                 type="email"
                 id="email"
                 name="email"
+                value={email}
+                onChange={handleChange}
                 placeholder="Email"
                 className="pl-4 py-2 rounded-md text-xl w-full"
               />
@@ -31,6 +67,8 @@ const Login = () => {
               <input
                 type="password"
                 id="password"
+                value={password}
+                onChange={handleChange}
                 name="password"
                 placeholder="password"
                 className="pl-4 py-2 rounded-md text-xl w-full"

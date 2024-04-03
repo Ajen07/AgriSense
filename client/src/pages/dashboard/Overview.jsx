@@ -54,11 +54,11 @@ const Overview = () => {
         name="Humidity"
         value={`${data?.hu}%`}
       />
-      <OverviewItem image={fertilizerLogo} name="Soil Fertility" value="46%" />
+      <OverviewItem image={fertilizerLogo} name="Rainfall(mm)" value="269" />
       <OverviewItem
         image={moistureLogo}
         name="Soil Moisture"
-        value={data?.mo}
+        value={Math.floor((data?.mo)/20)}
       />
     </section>
   );

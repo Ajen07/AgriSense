@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import heroImage from "../../../public/assets/heroImage3.jpg";
+import React, { useEffect, useState } from "react";
+import heroImage from "/assets/heroImage3.jpg";
 import { useFirebase } from "../../context/Firebase";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const Register = () => {
   const { register } = useFirebase();
+  const navigate = useNavigate();
   const [initialValues, setInitialValues] = useState({
     name: "",
     email: "",
@@ -14,9 +17,20 @@ const Register = () => {
   const { name, email, address, password, confirmPassword } = initialValues;
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const resp = await register({ ...initialValues });
       console.log(resp);
+      toast.success("User registered successfully", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+      });
+      navigate("/dashboard");
     } catch (error) {
       console.log(error.message);
     }
